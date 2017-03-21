@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F44A125-CAC9-43B8-A06E-BF23FD51271E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Discord.Net</RootNamespace>
+    <AssemblyName>Discord.Net</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Concurrent, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Concurrent.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Enlightenment, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.3.0.1\lib\net45\Nito.AsyncEx.Enlightenment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebSocket4Net, Version=0.14.1.0, Culture=neutral, PublicKeyToken=eb4e154b696bf72a, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocket4Net.0.14.1\lib\net45\WebSocket4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API1\Client\Common\Channel.cs" />
+    <Compile Include="API1\Client\Common\ChannelReference.cs" />
+    <Compile Include="API1\Client\Common\ExtendedGuild.cs" />
+    <Compile Include="API1\Client\Common\ExtendedMember.cs" />
+    <Compile Include="API1\Client\Common\Game.cs" />
+    <Compile Include="API1\Client\Common\Guild.cs" />
+    <Compile Include="API1\Client\Common\GuildReference.cs" />
+    <Compile Include="API1\Client\Common\Invite.cs" />
+    <Compile Include="API1\Client\Common\InviteReference.cs" />
+    <Compile Include="API1\Client\Common\Member.cs" />
+    <Compile Include="API1\Client\Common\MemberPresence.cs" />
+    <Compile Include="API1\Client\Common\MemberReference.cs" />
+    <Compile Include="API1\Client\Common\MemberVoiceState.cs" />
+    <Compile Include="API1\Client\Common\Message.cs" />
+    <Compile Include="API1\Client\Common\MessageReference.cs" />
+    <Compile Include="API1\Client\Common\Role.cs" />
+    <Compile Include="API1\Client\Common\RoleReference.cs" />
+    <Compile Include="API1\Client\Common\User.cs" />
+    <Compile Include="API1\Client\Common\UserReference.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Commands\Heartbeat.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Commands\Identify.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Commands\RequestMembers.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Commands\Resume.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Commands\UpdateStatus.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Commands\UpdateVoice.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\ChannelCreate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\ChannelDelete.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\ChannelUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildBanAdd.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildBanRemove.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildCreate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildDelete.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildEmojisUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildIntegrationsUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildMemberAdd.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildMemberRemove.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildMembersChunk.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildMemberUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildRoleCreate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildRoleDelete.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildRoleUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\GuildUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\MessageAck.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\MessageCreate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\MessageDelete.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\MessageUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\PresenceUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\Ready.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\Reconnect.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\Resumed.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\TypingStart.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\UserSettingsUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\UserUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\VoiceServerUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\Events\VoiceStateUpdate.cs" />
+    <Compile Include="API1\Client\GatewaySocket\OpCodes.cs" />
+    <Compile Include="API1\Client\ISerializable.cs" />
+    <Compile Include="API1\Client\IWebSocketMessage.cs" />
+    <Compile Include="API1\Client\Rest\AcceptInvite.cs" />
+    <Compile Include="API1\Client\Rest\AckMessage.cs" />
+    <Compile Include="API1\Client\Rest\AddChannelPermission.cs" />
+    <Compile Include="API1\Client\Rest\AddGuildBan.cs" />
+    <Compile Include="API1\Client\Rest\BulkMessageDelete.cs" />
+    <Compile Include="API1\Client\Rest\CreateChannel.cs" />
+    <Compile Include="API1\Client\Rest\CreateGuild.cs" />
+    <Compile Include="API1\Client\Rest\CreateInvite.cs" />
+    <Compile Include="API1\Client\Rest\CreatePrivateChannel.cs" />
+    <Compile Include="API1\Client\Rest\CreateRole.cs" />
+    <Compile Include="API1\Client\Rest\DeleteChannel.cs" />
+    <Compile Include="API1\Client\Rest\DeleteGuild.cs" />
+    <Compile Include="API1\Client\Rest\DeleteInvite.cs" />
+    <Compile Include="API1\Client\Rest\DeleteMessage.cs" />
+    <Compile Include="API1\Client\Rest\DeleteRole.cs" />
+    <Compile Include="API1\Client\Rest\Gateway.cs" />
+    <Compile Include="API1\Client\Rest\GetBans.cs" />
+    <Compile Include="API1\Client\Rest\GetInvite.cs" />
+    <Compile Include="API1\Client\Rest\GetInvites.cs" />
+    <Compile Include="API1\Client\Rest\GetMessages.cs" />
+    <Compile Include="API1\Client\Rest\GetVoiceRegions.cs" />
+    <Compile Include="API1\Client\Rest\GetWidget.cs" />
+    <Compile Include="API1\Client\Rest\KickMember.cs" />
+    <Compile Include="API1\Client\Rest\LeaveGuild.cs" />
+    <Compile Include="API1\Client\Rest\Login.cs" />
+    <Compile Include="API1\Client\Rest\Logout.cs" />
+    <Compile Include="API1\Client\Rest\PruneMembers.cs" />
+    <Compile Include="API1\Client\Rest\RemoveChannelPermission.cs" />
+    <Compile Include="API1\Client\Rest\RemoveGuildBan.cs" />
+    <Compile Include="API1\Client\Rest\ReorderChannels.cs" />
+    <Compile Include="API1\Client\Rest\ReorderRoles.cs" />
+    <Compile Include="API1\Client\Rest\SendFile.cs" />
+    <Compile Include="API1\Client\Rest\SendIsTyping.cs" />
+    <Compile Include="API1\Client\Rest\SendMessage.cs" />
+    <Compile Include="API1\Client\Rest\UpdateChannel.cs" />
+    <Compile Include="API1\Client\Rest\UpdateGuild.cs" />
+    <Compile Include="API1\Client\Rest\UpdateMember.cs" />
+    <Compile Include="API1\Client\Rest\UpdateMessage.cs" />
+    <Compile Include="API1\Client\Rest\UpdateOwnNick.cs" />
+    <Compile Include="API1\Client\Rest\UpdateProfile.cs" />
+    <Compile Include="API1\Client\Rest\UpdateRole.cs" />
+    <Compile Include="API1\Client\VoiceSocket\Commands\Heartbeat.cs" />
+    <Compile Include="API1\Client\VoiceSocket\Commands\Identify.cs" />
+    <Compile Include="API1\Client\VoiceSocket\Commands\SelectProtocol.cs" />
+    <Compile Include="API1\Client\VoiceSocket\Commands\SetSpeaking.cs" />
+    <Compile Include="API1\Client\VoiceSocket\Events\Ready.cs" />
+    <Compile Include="API1\Client\VoiceSocket\Events\SessionDescription.cs" />
+    <Compile Include="API1\Client\VoiceSocket\Events\Speaking.cs" />
+    <Compile Include="API1\Client\VoiceSocket\OpCodes.cs" />
+    <Compile Include="API1\Converters.cs" />
+    <Compile Include="API1\Extensions.cs" />
+    <Compile Include="API1\IRestRequest.cs" />
+    <Compile Include="API1\Status\Common\StatusResult.cs" />
+    <Compile Include="API1\Status\Rest\ActiveMaintenances.cs" />
+    <Compile Include="API1\Status\Rest\AllIncidents.cs" />
+    <Compile Include="API1\Status\Rest\UnresolvedIncidents.cs" />
+    <Compile Include="API1\Status\Rest\UpcomingMaintenances.cs" />
+    <Compile Include="DiscordClient.cs" />
+    <Compile Include="DiscordClient.Events.cs" />
+    <Compile Include="DiscordConfig.cs" />
+    <Compile Include="DynamicIL.cs" />
+    <Compile Include="Enums1\ChannelType.cs" />
+    <Compile Include="Enums1\ConnectionState.cs" />
+    <Compile Include="Enums1\GameType.cs" />
+    <Compile Include="Enums1\ImageType.cs" />
+    <Compile Include="Enums1\LogSeverity.cs" />
+    <Compile Include="Enums1\PermissionBits.cs" />
+    <Compile Include="Enums1\PermissionTarget.cs" />
+    <Compile Include="Enums1\PermValue.cs" />
+    <Compile Include="Enums1\Relative.cs" />
+    <Compile Include="Enums1\StringEnum.cs" />
+    <Compile Include="Enums1\TokenType.cs" />
+    <Compile Include="Enums1\UserStatus.cs" />
+    <Compile Include="ETF1\ETFReader.cs" />
+    <Compile Include="ETF1\ETFType.cs" />
+    <Compile Include="ETF1\ETFWriter.cs" />
+    <Compile Include="Events1\ChannelEventArgs.cs" />
+    <Compile Include="Events1\ChannelUpdatedEventArgs.cs" />
+    <Compile Include="Events1\ChannelUserEventArgs.cs" />
+    <Compile Include="Events1\DisconnectedEventArgs.cs" />
+    <Compile Include="Events1\LogMessageEventArgs.cs" />
+    <Compile Include="Events1\MessageEventArgs.cs" />
+    <Compile Include="Events1\MessageUpdatedEventArgs.cs" />
+    <Compile Include="Events1\ProfileUpdatedEventArgs.cs" />
+    <Compile Include="Events1\RoleEventArgs.cs" />
+    <Compile Include="Events1\RoleUpdatedEventArgs.cs" />
+    <Compile Include="Events1\ServerEventArgs.cs" />
+    <Compile Include="Events1\ServerUpdatedEventArgs.cs" />
+    <Compile Include="Events1\UserEventArgs.cs" />
+    <Compile Include="Events1\UserUpdatedEventArgs.cs" />
+    <Compile Include="Format.cs" />
+    <Compile Include="IMentionable.cs" />
+    <Compile Include="InternalExtensions.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="Legacy.cs" />
+    <Compile Include="Logging1\ILogger.cs" />
+    <Compile Include="Logging1\Logger.cs" />
+    <Compile Include="Logging1\LogManager.cs" />
+    <Compile Include="MessageQueue.cs" />
+    <Compile Include="Models1\Channel.cs" />
+    <Compile Include="Models1\Color.cs" />
+    <Compile Include="Models1\Game.cs" />
+    <Compile Include="Models1\Invite.cs" />
+    <Compile Include="Models1\Message.cs" />
+    <Compile Include="Models1\Permissions.cs" />
+    <Compile Include="Models1\Profile.cs" />
+    <Compile Include="Models1\Region.cs" />
+    <Compile Include="Models1\Role.cs" />
+    <Compile Include="Models1\Server.cs" />
+    <Compile Include="Models1\User.cs" />
+    <Compile Include="Net1\HttpException.cs" />
+    <Compile Include="Net1\Rest\BuiltInEngine.cs" />
+    <Compile Include="Net1\Rest\CompletedRequestEventArgs.cs" />
+    <Compile Include="Net1\Rest\IRestEngine.cs" />
+    <Compile Include="Net1\Rest\JsonRestClient.cs" />
+    <Compile Include="Net1\Rest\RequestEventArgs.cs" />
+    <Compile Include="Net1\Rest\RestClient.cs" />
+    <Compile Include="Net1\Rest\SharpRestEngine.cs" />
+    <Compile Include="Net1\TimeoutException.cs" />
+    <Compile Include="Net1\WebSocketException.cs" />
+    <Compile Include="Net1\WebSockets\BinaryMessageEventArgs.cs" />
+    <Compile Include="Net1\WebSockets\BuiltInEngine.cs" />
+    <Compile Include="Net1\WebSockets\GatewaySocket.cs" />
+    <Compile Include="Net1\WebSockets\IWebSocketEngine.cs" />
+    <Compile Include="Net1\WebSockets\TextMessageEventArgs.cs" />
+    <Compile Include="Net1\WebSockets\WebSocket.cs" />
+    <Compile Include="Net1\WebSockets\WebSocketEventEventArgs.cs" />
+    <Compile Include="Net1\WebSockets\WS4NetEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceCollection.cs" />
+    <Compile Include="TaskManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Discord.Net.Helper\Discord.Net.Helper.csproj">
+      <Project>{66349e83-5497-4247-96f2-8e99103600e1}</Project>
+      <Name>Discord.Net.Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
